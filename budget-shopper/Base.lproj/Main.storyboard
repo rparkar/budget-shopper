@@ -22,37 +22,52 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowShopperIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DL1-3I-MPQ">
-                                <rect key="frame" x="130" y="45" width="115" height="80"/>
+                                <rect key="frame" x="130" y="65" width="115" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="YFC-tB-IvR"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjG-1L-2Iq">
-                                <rect key="frame" x="60" y="172" width="266" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjG-1L-2Iq" customClass="hourlyWageTextField" customModule="budget_shopper" customModuleProvider="target">
+                                <rect key="frame" x="30" y="190" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vkR-V9-tEL"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0F-4p-ufm">
-                                <rect key="frame" x="60" y="222" width="266" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Product price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s0h-Ia-00e" customClass="hourlyWageTextField" customModule="budget_shopper" customModuleProvider="target">
+                                <rect key="frame" x="30" y="260" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kcR-3e-tg0"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jjG-1L-2Iq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="05m-7M-r3x"/>
                             <constraint firstItem="j1i-2e-IVw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ds1-mc-ctP"/>
+                            <constraint firstItem="s0h-Ia-00e" firstAttribute="trailing" secondItem="jjG-1L-2Iq" secondAttribute="trailing" id="FCR-fW-JdA"/>
                             <constraint firstItem="DL1-3I-MPQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q3b-fN-2c9"/>
-                            <constraint firstItem="DL1-3I-MPQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="QP1-WN-83l"/>
+                            <constraint firstItem="DL1-3I-MPQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="QP1-WN-83l"/>
+                            <constraint firstItem="s0h-Ia-00e" firstAttribute="leading" secondItem="jjG-1L-2Iq" secondAttribute="leading" id="W4E-iz-h0d"/>
                             <constraint firstItem="j1i-2e-IVw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bd0-aw-op7"/>
                             <constraint firstItem="j1i-2e-IVw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hJB-5h-BYr"/>
                             <constraint firstItem="j1i-2e-IVw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hQE-7o-jdR"/>
+                            <constraint firstItem="s0h-Ia-00e" firstAttribute="top" secondItem="jjG-1L-2Iq" secondAttribute="bottom" constant="30" id="hrx-EN-rFP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjG-1L-2Iq" secondAttribute="trailing" constant="30" id="nWI-Mg-PjV"/>
+                            <constraint firstItem="jjG-1L-2Iq" firstAttribute="top" secondItem="DL1-3I-MPQ" secondAttribute="bottom" constant="45" id="w8B-oR-TVg"/>
+                            <constraint firstItem="s0h-Ia-00e" firstAttribute="height" secondItem="jjG-1L-2Iq" secondAttribute="height" id="yCB-6X-hjN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceTextField" destination="s0h-Ia-00e" id="1CS-aT-ypB"/>
+                        <outlet property="wageTextField" destination="jjG-1L-2Iq" id="3Zs-kX-HhX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
