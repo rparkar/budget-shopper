@@ -16,9 +16,32 @@ import UIKit
 
 class hourlyWageTextField: UITextField {
     
-    
-    
-    
+    //adding a custom label inside the text field
+    //
+    override func draw(_ rect: CGRect) {
+        
+        //remeber to use GCFLoat cos all values are in CGFloat
+        let labelSize: CGFloat = 30
+        let currencyIconLabel = UILabel(frame: CGRect(x: 5, y: ((frame.size.height / 2 ) - labelSize / 2) , width: labelSize, height: labelSize))
+        
+        currencyIconLabel.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 0.9511659021)
+        currencyIconLabel.textColor = #colorLiteral(red: 0.9835792184, green: 1, blue: 0.9820356965, alpha: 1)
+        currencyIconLabel.textAlignment = .center
+        currencyIconLabel.layer.cornerRadius = 5
+        currencyIconLabel.clipsToBounds = true //so corners are rounded and doesnt bleed out
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = .current // this value is by default
+        
+        //display the currency symbol
+        currencyIconLabel.text = formatter.currencySymbol
+        
+        //add the label into the textfield View
+        addSubview(currencyIconLabel)
+        
+        
+    }
     
     //this runs the code needed to be seen live in the storyboard
     override func prepareForInterfaceBuilder() {
@@ -44,6 +67,7 @@ class hourlyWageTextField: UITextField {
         
         //rounded corners of text field
         layer.cornerRadius = 5
+        clipsToBounds = true
         
         // allignment of text to center of TF
         textAlignment = .center
