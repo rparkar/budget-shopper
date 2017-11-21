@@ -13,7 +13,7 @@ class CalculateHours {
     
     class func getHours(forWage wage: Double, andPrice price: Double) -> Int{
         
-        //ceil rounds up the value to next number
+        //ceil func rounds up the value to next number
         return Int(ceil(price / wage))
         
     }
